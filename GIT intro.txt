@@ -1,0 +1,321 @@
+GIT intro :
+REcap :
+Why Devops, tools, quiz, SDLC, Agile ,SCRUM, ?
+
+Agenda :
+
+need of version control system ?
+benefits ?
+types of VCS ?
+what is GIT ?
+what is github?
+github account creation?
+6 months -->
+Being a developer --> write serveral files -> source code
+1.client gave me the req -> irctc project 
+  initial requirment :
+  100 files developed
+2.client suggested few  changes:
+  i changed some files of source code to meet client req
+3. given a demo ,again client suggested changes
+   i have changed few files 
+4.demo for 3 rd time
+  go back to the changes which you have shown in step 1/ in first demo
+
+-->
+VCS -> VERSION CONTROL SYSTEM 
+who did the change,
+when he did the change,
+what change he did , etc
+-->
+no overwriting the code 
+100 f-> 
+1  file --> 99 files , 1 added
+--->
+shares among peer dev,
+parallel development .
+
+
+Terminologies :
+
+working dir :no versionn
+
+
+repository :store files ,version,
+
+commit : process of sending files from workdir to rep
+
+checkout : repo to workdir
+
+benefits :
+
+1) maintain multiple versions
+2) track ,when ,who,what
+3) developers can share the code - peers
+4)  backup of code, day 
+5) parallel dev
+6)access control , deva a new joinee , read only access 
+
+app managers --> support ,developers
+
+
+types of VCS :
+
+1) centralized vcs  --> always connecton to repo
+2) decentralized vcs  --> no need to connect to repo always
+
+
+
+1) centralized vcs
+4 dev --> 1 repo   ,
+
+ex : cvs, svn, TFS
+
+
+2) decentralized vcs:
+
+git , fossil
+
+high avalability , speed,no single point 
+
+
+what is GIT ?
+
+GIT DVCS
+dev has local repo
+locally ,repo
+no single point  failure 
+parallel dev 
+
+____________________________
+
+workdir   --add--> staging  stage -commit---> local repo 
+touch f1.txt ----> f1.txt         ----> f1.txt
+touch sample.txt
+workdir --> local repo this is not possible
+
+workdir   ---> staging area  ---> local repo  ---> remote repo (github)
+f1.txt   add    f1.txt      commit f1.txt     push  f1.txt
+
+remote repo --> wordir 
+f1.txt   clone  f1.txt
+
+git add filename
+git commit -m "added login service" 
+git push 
+git clone
+
+2 types of git has :
+1) local repository
+2) remote repository 
+
+
+git -->DVCS  - client -local repository
+github --> remote repository --> server 
+
+reconnect @ 9:40 
+
+
+-------
+
+git --version
+git version 2.34.1
+apt install git -y
+git config --global user.name "srikanth"
+ubuntu@my-server:~$ git config --list
+user.name=srikanth
+ubuntu@my-server:~$ git config --global user.email "srikanth@email.com"
+ubuntu@my-server:~$ git config --list
+mkdir project
+cd project 
+ls -a
+git status
+fatal error 
+git init 
+ls -a
+ git rm --cached sample.txt
+   90  git status
+   91  clear
+   92  git add sample.txt
+   93  git status
+   94  git commit -m "updating sample file for login"
+   95  git status
+   96  git help
+
+phonpe.v1.0  --> release_v1.0  --> commits ,
+phone v2.o   ---> release_v2.0 -->
+websphere_test:
+
+master/main empty repo- > git 
+2 dev feature/dev1 --> PR PULL REQUEST --> master
+      feature/dev2 from master  -->changes --> pr --> master latest code
+
+-------
+dev2 -->pr --> master
+dev1 --> rebase master -->pr -->master 
+
+
+one branch per feature
+
+cd websphere_test/
+  106  la
+  107  ls
+  108  clear
+  109  ls -lrt
+  110  git branch
+  111  git branch -r
+  112  git checkout feature/gmail_login
+  113  git branch
+  114  clear
+  115  git branch dev
+  116  git branches
+  117  git branch -r
+  118  git branchs
+  119  clear
+  120*
+  121  git checkout -b prod
+  122  git branch
+
+  113  git branch
+  114  clear
+  115  git branch dev
+  116  git branches
+  117  git branch -r
+  118  git branchs
+  119  clear
+  120*
+  121  git checkout -b prod
+  122  git branch
+  123  history
+  124  clear
+  125  ls
+  126  git checkout feature/gmail_login
+  127  ls
+  128  touch file1, filename2
+  129  touch hello.txt
+  130  ls
+  131  ls -lrt
+  132  git status
+  133  clear
+  134  git status
+  135  git add .
+  136  git status
+  137  git commit -m "testing of adding 3 files"
+  138  clear
+  139  git branch
+  140  git log
+  141  date
+  142  git log --oneline
+  143  clear
+  144  git log --oneline
+  145  git diff d60669e 458097b
+  146  git status
+  147  git remote -v
+  148  clear
+  149  git push -u origin
+  150  clear
+  151  git push -u origin
+  152  git branch --list
+  153  git push -u origin dev
+  154  clear
+  155  git branch --list
+  156  git checkout -b mirror
+  157  ls
+  158  clear
+  159  ls
+  160  rm -r *
+  161  ls
+  162  echo "hell world " > world.txt
+  163  ls
+  164  git branch
+  165  git add .
+  166  git commit -m "pushing the branch"
+  167  git push -u origin mirror
+  168  clear
+  169  git remote -v
+  170  git remote add sri https://github.com/techfarmersrikanth/websphere_test.git
+  171  git remote -v
+  172  cd ..
+  173  ls
+  174  cd ..
+  175  mkdir test_gt
+  176  cd test
+  177  cd ..
+  178  cd test_gt/
+  179  ls
+  180  touch f1{1..7}
+  181  ls
+  182  git status
+  183  git add .
+  184  git init
+  185  clear
+  186  git status
+  187  git add .
+  188  git status
+  189  git commit -m "adding random files"
+  190  git remote -v
+  191  git remote add srikanth https://github.com/techfarmersrikanth/websphere_test.git
+  192  git remote -v
+  193* git push -u srikanth
+  194  git push -u srikanth
+  195  git push -u srikanth branch dev
+  196  git push -u srikanth -b  dev
+  197  git push -u srikanth
+
+_______________________
+task :
+new dir, file.tx, scrip1.sh script2.sh --> local
+add github url 
+git remote add 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
